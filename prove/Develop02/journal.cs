@@ -8,7 +8,10 @@ public class Journal
 
         public Journal()
         {
+        }
 
+        public void Display()
+        {
         string filename = "myFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
 
@@ -16,12 +19,13 @@ public class Journal
                 {
                     string[] parts = line.Split(",");
 
-                    string date = parts[0];
+                //     string date = parts[0];
                 //     string question = parts[1];
                 //     string answ = parts[2];
                     
-                Console.WriteLine(date);
+                  Console.WriteLine(parts[0]);
                 }
+
         }
         
 }

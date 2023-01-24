@@ -19,7 +19,6 @@ class Program
 
         Console.Write("What would you like to do? ");
         string num = Console.ReadLine();
-        // Console.Clear();
         int numberElect = int.Parse(num);
          
         switch(numberElect) 
@@ -38,11 +37,11 @@ class Program
                 break;
             case 2:
                 Journal diss = new Journal();
-                // diss.Display();
+                diss.Display();
                 break;
-            // case 3:
-            //     // code block
-            //     break;
+            case 3:
+                //code block
+                break;
             // case 4:
             //     // code block
             //     break;
