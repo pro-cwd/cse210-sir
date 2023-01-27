@@ -5,7 +5,7 @@ public class Journal
         // string date = "";
         // string question = "";
         // string answ = "";
-
+        public List<Entry> _entries = new List<Entry>();
         public Journal()
         {
         }
@@ -19,10 +19,6 @@ public class Journal
                 {
                     string[] parts = line.Split(",");
 
-                //     string date = parts[0];
-                //     string question = parts[1];
-                //     string answ = parts[2];
-                    
                   Console.WriteLine(parts[0]);
                 }
 
