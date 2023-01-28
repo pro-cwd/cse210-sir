@@ -1,27 +1,21 @@
-using System;
+// using System;
+// using System.IO;
 
 public class Journal
 {
-        // string date = "";
-        // string question = "";
-        // string answ = "";
+        
         public List<Entry> _entries = new List<Entry>();
-        public Journal()
-        {
-        }
 
         public void Display()
         {
-        string filename = "myFile.txt";
-        string[] lines = System.IO.File.ReadAllLines(filename);
-
-                foreach (string line in lines)
+                foreach (Entry entry in _entries)
                 {
-                    string[] parts = line.Split(",");
+                        entry.DisplayEntry();
+                        Console.WriteLine(" ");
 
-                  Console.WriteLine(parts[0]);
                 }
 
         }
         
 }
+       
