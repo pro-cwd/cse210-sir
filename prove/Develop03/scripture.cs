@@ -1,6 +1,6 @@
 public class Scripture
 {   
-    private string[] jhonOne = {
+    public string[] _johnOne = {
         "In the bbeginning was the Word, and the cWord was with God, and the dWord was eGod.",
         "The same was in the abeginning with God.",
         "All things were amade by him; and without him was not any thing made that was made.",
@@ -52,27 +52,154 @@ public class Scripture
         "Nathanael answered and saith unto him, Rabbi, thou art the aSon of God; thou art the bKing of Israel.",
         "Jesus answered and said unto him, Because I said unto thee, I saw thee under the fig tree, believest thou? thou shalt see greater things than these.",
         "And he saith unto him, Verily, verily, I say unto you, Hereafter ye shall see heaven open, and the angels of God ascending and descending upon the Son of man."
-        };
+    };
 
-    Reference chap = new Reference();
-    private string _chapter = chap.References();
-    private string _book = chap._num;
-    string j = "John";
-    string g = "Galatians";
-    string ja = "James";
-
-    public void Verses()
+   
+    public int _verse;
+    public int _verse2;
+    string[] versesPrint = new string[5];
+    
+    public Scripture()
     {
-        if (_book == j && _chapter == 1)
-        {
-            foreach (int i in jhonOne.Length)
-            {
-                Console.WriteLine(i);
-            }
-            Console.Write("Please choose a verse:");
-            string vrs = Console.ReadLine();
-            int verse = int.Parse(vrs);
-        }
     }
 
+    public void John1()
+    {
+        for (int indice = 0; indice < _johnOne.Length; indice++)
+        {
+            int i = indice + 1;
+            string elemento = _johnOne[indice];
+            Console.Write(i);
+            // Console.Write(elemento);
+            //Imprimir también una coma
+            if (i != _johnOne.Length)
+            {
+                Console.Write(", ");
+            } else
+            {
+                Console.Write(".");
+            };
+            if (i == _verse)
+            {
+                versesPrint.Append(elemento);
+            };
+        };
+    }
+
+    public string[] _johnTwo = {
+        "And the athird day there was a marriage in Cana of Galilee; and the mother of Jesus was there:",
+        "And both Jesus was called, and his disciples, to the marriage.",
+        "And when they wanted wine, the mother of Jesus saith unto him, They have no wine.",
+        "Jesus saith unto her, aWoman, what have I to do with thee? mine hour is not yet come.",
+        "His mother saith unto the servants, Whatsoever he saith unto you, do it.",
+        "And there were set there six waterpots of stone, after the manner of the apurifying of the Jews, containing two or three firkins apiece.",
+        "Jesus saith unto them, Fill the waterpots with water. And they filled them up to the brim.",
+        "And he saith unto them, Draw out now, and bear unto the governor of the feast. And they bare it.",
+        "When the ruler of the feast had tasted the water that was made wine, and knew not whence it was: (but the servants which drew the water knew;) the governor of the feast called the bridegroom,",
+        "And saith unto him, Every man at the beginning doth set forth good wine; and when men have well drunk, then that which is worse: but thou hast kept the good wine until now.",
+        "This abeginning of bmiracles did Jesus in Cana of Galilee, and manifested forth his glory; and his disciples believed on him.",
+        "After this he went down to Capernaum, he, and his mother, and his abrethren, and his disciples: and they continued there not many days.",
+        "And the Jews’ passover was at hand, and Jesus went up to Jerusalem,",
+        "And found in the temple those that sold oxen and sheep and doves, and the changers of amoney sitting:",
+        "And when he had made a ascourge of small cords, he drove them all out of the temple, and the sheep, and the oxen; and poured out the changers’ money, and overthrew the tables;",
+        "And said unto them that sold doves, Take these things hence; make not my Father’s house an house of merchandise.",
+        "And his disciples remembered that it was written, The azeal of thine house hath beaten me up.",
+        "Then answered the Jews and said unto him, What asign shewest thou unto us, seeing that thou doest these things?",
+        "Jesus answered and said unto them, Destroy this atemple, and in three days I will braise it up.",
+        "Then said the Jews, Forty and six years was this atemple in building, and wilt thou rear it up in three days?",
+        "But he spake of the temple of his body.",
+        "When therefore he was risen from the dead, his disciples remembered that he had said this unto them; and they believed the scripture, and the word which Jesus had said.",
+        "Now when he was in Jerusalem at the apassover, in the feast day, many believed in his bname, when they saw the cmiracles which he did.",
+        "But Jesus did not acommit himself unto them, because he bknew all cmen,",
+        "And needed not that any should testify of man: for he aknew what was in bman."
+    };
+
+    public void John2()
+    {
+    for (int indice = 0; indice < _johnTwo.Length; indice++)
+        {
+            int i = indice + 1;
+            string elemento = _johnTwo[indice];
+            Console.Write(i);
+            // Console.Write(elemento);
+            //Imprimir también una coma
+            if (i != _johnTwo.Length)
+            {
+            Console.Write(", ");
+            } else
+            {
+            Console.Write(".");
+            };
+        };
+    }
+    public string[] _johnThree = {
+        "There was a man of the Pharisees, named aNicodemus, a bruler of the Jews:",
+        "The same came to Jesus by night, and said unto him, Rabbi, we know that thou art a teacher come from God: for no man can do these amiracles that thou doest, except bGod be with him.",
+        "Jesus answered and said unto him, Verily, verily, I say unto thee, Except a man be aborn bagain, he cannot csee the kingdom of God.",
+        "Nicodemus saith unto him, How can a man be born when he is old? can he enter the second time into his mother’s womb, and be born?",
+        "Jesus answered, Verily, verily, I say unto thee, Except a man be aborn of bwater and of the cSpirit, he cannot denter into the kingdom of God.",
+        "That which is born of the flesh is flesh; and that which is born of the Spirit is spirit.",
+        "Marvel not that I said unto thee, Ye must be aborn again.",
+        "The awind bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, and whither it goeth: so is every one that is born of the bSpirit.",
+        "Nicodemus answered and said unto him, How can these things be?",
+        "Jesus answered and said unto him, Art thou a master of Israel, and knowest not these things?",
+        "aVerily, verily, I say unto thee, We speak that we do know, and btestify that we have seen; and ye receive not our witness.",
+        "If I have told you earthly things, and ye abelieve not, how shall ye believe, if I tell you of heavenly things?",
+        "And no man hath aascended up to heaven, but he that bcame down from heaven, even the cSon of man which is in heaven.",
+        "And as Moses lifted up the aserpent in the wilderness, even so must the bSon of man be lifted up:",
+        "That whosoever believeth in him should not perish, but have eternal life.",
+        "For aGod so bloved the cworld, that he dgave his eonly begotten fSon, that whosoever gbelieveth in him should not perish, but have heverlasting ilife.",
+        "For God asent not his Son into the world to bcondemn the world; but that the world through him might be csaved.",
+        "He that believeth on him is not condemned: but he that abelieveth not is condemned already, because he hath not believed in the bname of the only begotten cSon of God.",
+        "And this is the condemnation, that alight is come into the world, and men loved bdarkness rather than light, because their cdeeds were evil.",
+        "For every one that doeth aevil bhateth the light, neither cometh to the light, lest his deeds should be reproved.",
+        "But he that adoeth btruth cometh to the clight, that his deeds may be made manifest, that they are wrought in God.",
+        "After these things came Jesus and his disciples into the land of Judæa; and there he tarried with them, and abaptized.",
+        "And John also was baptizing in Ænon near to Salim, because there was much awater there: and they came, and were bbaptized.",
+        "For John was not yet cast into prison.",
+        "Then there arose a question between some of John’s disciples and the Jews about purifying.",
+        "And they came unto John, and said unto him, Rabbi, he that was with thee beyond Jordan, to whom thou barest witness, behold, the same baptizeth, aand all men come to him.",
+        "John answered and said, A man can areceive nothing, except it be given him from heaven.",
+        "Ye yourselves bear me witness, that I said, I am not the Christ, but that I am sent before him.",
+        "He that hath the bride is the bridegroom: but the friend of the bridegroom, which standeth and heareth him, rejoiceth greatly because of the bridegroom’s voice: this my joy therefore is fulfilled.",
+        "He must increase, but I must decrease.",
+        "He that cometh from aabove is above all: he that is of the earth is earthly, and speaketh of the earth: he that cometh from heaven is above all.",
+        "And what he hath seen and heard, that he atestifieth; and no man receiveth his testimony.",
+        "He that hath received his testimony hath aset to his bseal that God is true.",
+        "For he whom God hath sent aspeaketh the words of God: bfor God giveth not the Spirit by measure unto him.",
+        "The Father loveth the aSon, and hath bgiven all cthings into his hand.",
+        "He that believeth on the Son hath beverlasting life: and he that cbelieveth not the Son shall not see life; but the dwrath of God abideth on him."
+    };
+
+    public void John3()
+    {
+    for (int indice = 0; indice < _johnThree.Length; indice++)
+        {
+            int i = indice + 1;
+            string elemento = _johnThree[indice];
+            Console.Write(i);
+            // Console.Write(elemento);
+            //Imprimir también una coma
+            if (i != _johnThree.Length)
+            {
+            Console.Write(", ");
+            } else
+            {
+            Console.Write(".");
+            };
+            
+        };
+    }
+
+    static int searchIndex(int[] array, int search)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == search)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
 }

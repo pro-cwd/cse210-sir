@@ -7,7 +7,7 @@ class Program
         Console.WriteLine("Hello Develop03 World!\n");
 
 
-        string[] content = {"1. John", "2. Galatians", "3. James"};
+        string[] content = {"John 1", "John 2", "john 3"};
         Console.WriteLine("\"Welcome to the Scripture Memorizer\"\n");
 
         Console.WriteLine("Scripture of New Testament:");
@@ -15,12 +15,11 @@ class Program
             {
                 Console.WriteLine(i);
             }
-        Console.Write("Please select a Scripture: ");
-        string num = Console.ReadLine();
-        int numberElect = int.Parse(num);
+        Console.Write("Please select a Chapter: ");
+        string chapter = Console.ReadLine();
+        int numberElect = int.Parse(chapter);
 
         Reference refer = new Reference();
-        refer._num = num;
         refer._numberElect = numberElect;
         refer.References();
         

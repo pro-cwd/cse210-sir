@@ -1,59 +1,56 @@
 public class Reference
 {
-    private string[] chapterJn = {"John 1", "John 2", "John 3"};
-    private string[] chapterGs = {"Galatians 1", "Galatians 2", "Galatians 3"};
-    private string[] chapterJm = {"James 1", "James 2", "James 3"};
 
-    string j = "John";
-    string g = "Galatians";
-    string ja = "James";
 
-    public string _num = "";
     public int _numberElect;
-    public string chapter = "";
+    Scripture john = new Scripture();
 
-    public string References()
+    public void References()
     {
-    if (_num == j || _numberElect == 1) 
-        {
-            Console.WriteLine("\nJohn Chapters");
-            foreach (string i in chapterJn)
-                {
-                    Console.WriteLine(i);
-                }
-            Console.Write("Please choose a chapter:");
-            string chap = Console.ReadLine();
-            int chapter = int.Parse(chap);
-
-        } else if (_num == g || _numberElect == 2)
+    if (_numberElect == 1) 
+        {   
+            john.John1();
+            Console.Write("\nShow verses from: ");
+            string vrs = Console.ReadLine();
+            int verse = int.Parse(vrs);
+            john._verse = verse;
+            
+            Console.Write("to: ");
+            string vrs2 = Console.ReadLine();
+            int verse2 = int.Parse(vrs2);
+            john._verse2 = verse2;
+        }
+        else if (_numberElect == 2)
             {
-                Console.WriteLine("\nGalatians Chapters");
-                foreach (string i in chapterGs)
-                    {
-                        Console.WriteLine(i);
-                    }
-                Console.Write("Please choose a chapter:");
-                string chap = Console.ReadLine();
-                int chapter = int.Parse(chap);
-                // Console.WriteLine(chapGlans);
+                john.John2();
+                Console.Write("\nShow verses from: ");
+                string vrs3 = Console.ReadLine();
+                int verse4 = int.Parse(vrs3);
+                john._verse = verse4;
 
-            } else if (_num == ja || _numberElect == 3)
+                Console.Write("to: ");
+                string vrs5 = Console.ReadLine();
+                int verse6 = int.Parse(vrs5);
+                john._verse2 = verse6;
+
+            } else if (_numberElect == 3)
                 {
-                    Console.WriteLine("\nJames Chapters");
-                    foreach (string i in chapterJm)
-                        {
-                            Console.WriteLine(i);
-                        }
-                    Console.Write("Please choose a chapter:");
-                    string chap = Console.ReadLine();
-                    int chapter = int.Parse(chap);
-                    // Console.WriteLine(chapJames);
-                } 
+                    john.John3();
+                    Console.Write("\nShow verses from: ");
+                    string vrs7 = Console.ReadLine();
+                    int verse8 = int.Parse(vrs7);
+                    john._verse = verse8;
+
+                    Console.Write("to: ");
+                    string vrs9 = Console.ReadLine();
+                    int verse0 = int.Parse(vrs9);
+                    john._verse2 = verse0;
+                }
     else
         {
             Console.WriteLine("Please introduce the corret requirement");
         }
-        return chapter;   
+        // return chapter;
     }
 
 }
