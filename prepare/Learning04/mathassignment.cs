@@ -1,19 +1,40 @@
 
- public class MathAssognment : Assignment
-{
+//  public class MathAssognment : Assignment
+// {
     
-    private string _textbookSection = "";
-    private string _problems = "";
+//     private string _textbookSection = "";
+//     private string _problems = "";
 
-    public void GetHomeworkList(string section, string problems)
+//     public void GetHomeworkList(string section, string problems)
+//     {
+//         _textbookSection = section;
+//         _problems = problems;
+
+//         // Console.WriteLine($"{_studentName} - {_topic}");
+//         // Console.WriteLine($"Section {section} Problems {problems}");
+
+//     }
+
+
+// }
+
+public class MathAssignment : Assignment
+{
+    private string _textbookSection;
+    private string _problems;
+
+    // Notice the syntax here that the MathAssignment constructor has 4 parameters and then
+    // it passes 2 of them directly to the "base" constructor, which is the "Assignment" class constructor.
+    public MathAssignment(string studentName, string topic, string textbookSection, string problems)
+        : base(studentName, topic)
     {
-        _textbookSection = section;
+        // Here we set the MathAssignment specific variables
+        _textbookSection = textbookSection;
         _problems = problems;
-
-        // Console.WriteLine($"{_studentName} - {_topic}");
-        // Console.WriteLine($"Section {section} Problems {problems}");
-
     }
 
-
+    public string GetHomeworkList()
+    {
+        return $"Section {_textbookSection} Problems {_problems}";
+    }
 }
