@@ -14,9 +14,18 @@ public class Breathing : Activities
         _timeNum = int.Parse(tm);
         return _timeNum;
     }
-    int spinn = GetTime();
-    double spinn10 = (spinn / 100)*10;
-    double spinn15 = (spinn / 100)*20;
+    int time10 = (_timeNum / 100)*10;
+    int time15 = (_timeNum / 100)*20;
+
+    public void GetTime()
+    {
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
 
     public void GetBreathing()
     {   
@@ -24,9 +33,9 @@ public class Breathing : Activities
         Console.WriteLine("Get ready...");
         GetSpinner();
         Console.WriteLine("");
+        Console.WriteLine(_timeNum);
 
-        if
-        for (int i = 5 )        
+        Console.WriteLine($"Breathe in... {GetTime()}");
 
     }
 
