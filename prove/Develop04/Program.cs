@@ -21,23 +21,28 @@ class Program
             {
             case 1:
                 Console.Clear();
-                Console.WriteLine("Welcome to the Breathing Activity.\n");
-                Console.WriteLine("This activity will help you relax by walking your through brathing in and out slowly. Clear your mind and focus on your breathing.\n");
-                Console.Write("How long, in seconds, would you like for your session? ");
-                string time = Console.ReadLine();
-                int timeNum = int.Parse(time);
+                Breathing welcome = new Breathing("Welcome to the Breathing Activity.\n", "This activity will help you relax by walking your through brathing in and out slowly. Clear your mind and focus on your breathing.\n");
+                Console.WriteLine(welcome.GetWelcome());
+                Console.WriteLine(welcome.GetMessage());
+                welcome.GetTime();
+                welcome.GetBreathing();
+                // welcome.GetSpinner();
 
-                Breathing breath = new Breathing(timeNum);
-                // breath._timeNum = timeNum;
-                breath.GetBreathing();
+                Console.WriteLine("");
                 
 
                 break;
             case 2:
-                
+                Console.Clear();
+                Activities welcome2 = new Activities("Welcome to the Reflection Activity\n", "his activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n");
+                Console.WriteLine(welcome2.GetWelcome());
+                Console.WriteLine(welcome2.GetMessage());
                 break;
             case 3:
-                
+                Console.Clear();
+                Activities welcome3 = new Activities("Welcome to the Listing Activity\n", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.\n");
+                Console.WriteLine(welcome3.GetWelcome());
+                Console.WriteLine(welcome3.GetMessage());
                 break;
             case 4:
                 myBool = false;
