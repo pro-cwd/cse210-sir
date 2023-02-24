@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        string[] choices = {"1. Start breathing activity", "2. Start reflecting activity", "3. Start listing actvity", "4. Quit"};
+        string[] choices = {"1. Start breathing activity", "2. Start reflecting activity", "3. Start listing actvity", "4. Start thought activity", "5. Quit"};
         bool myBool = true;
         do
         {
@@ -46,10 +46,19 @@ class Program
                     welcome3.Listact();
                     break;
                 case 4:
+                    Console.Clear();
+                    Thought welcome4 = new Thought("Welcome to the Thought Activity\n", "This activity will help you control your thoughts to clean our mind.\n", "Thought Activity.\n");
+                    Console.WriteLine(welcome4.GetWelcome());
+                    Console.WriteLine(welcome4.GetMessage());
+                    welcome4.GetTime();
+                    welcome4.CtrlThought();
+                    
+                break;
+                case 5:
                     myBool = false;
                     break;
                 default:
-                    Console.WriteLine("Pleace enter a number 1 to 4");
+                    Console.WriteLine("Pleace enter a number 1 to 5");
                     break;
             }
         } while (myBool);

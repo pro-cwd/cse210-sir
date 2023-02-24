@@ -12,7 +12,7 @@ public class Listing : Activities
         _congrats = congrats;
     }
 
-     public int GetTime()
+    public int GetTime()
     {
         Console.Write("How long, in seconds, would you like for your session? ");
         string tm = Console.ReadLine();
