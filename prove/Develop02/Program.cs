@@ -28,7 +28,7 @@ class Program
         switch(numberElect)
             {
             case 1:
-                 DateTime theCurrentTime = DateTime.Now;
+                DateTime theCurrentTime = DateTime.Now;
                 string dateText = theCurrentTime.ToShortDateString();
                 string random = myPrompt.ShowPrompt();
                 Console.Write("> ");
