@@ -47,9 +47,4 @@ public class Thought : Activities
         GetSpinner();
 
     }
-
-
-
-
-
 }

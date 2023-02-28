@@ -1,14 +1,9 @@
 using System;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Text;
-// using System.Threading.Tasks;
 
 public class Activities
 {
     private string _welcome;
     private string _message;
-    // public List<string> _ListPrompts = new List<string>();
 
     public Activities(string welcome, string message)
     {
@@ -40,12 +35,7 @@ public class Activities
         animationStrings.Add("-");
         animationStrings.Add("\\");
         animationStrings.Add("|");
-        // foreach (string s in animationStrings)
-        // {
-        //     Console.Write(s);
-        //     Thread.Sleep(1000);
-        //     Console.Write("\b \b");
-        // }
+        
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(9);
 
@@ -95,26 +85,5 @@ public class Activities
         GetSpinner();
         Console.WriteLine("");
     }
-
-    // public void ShowPrompt()
-    //      {
-    //         Random rand = new Random();
-    //        string[] list = {"Think of a time when you stood up for someone else.", "Think of a time when you helped someone in need.", "Think of a time when you did something truly selfless."};
-    //         int randIndex = rand.Next(list.Length);
-    //         Console.WriteLine($"--- {list[randIndex]} ---");
-    // //         string randd = _ListPrompts[randIndex];
-    // //         return randd;
-    //      }
-    //  public void Display()
-    //     {
-    //             foreach ( string entry in _ListPrompts)
-    //             {
-    //                     Console.WriteLine($"--- {entry} ---");
-
-    //             }
-
-    //     }
-    
-
 
 }
