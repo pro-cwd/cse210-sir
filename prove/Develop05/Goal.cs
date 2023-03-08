@@ -1,13 +1,18 @@
 using System;
 
-public abstract class Goal
+public  class Goal
 {
-    private string _nameGoal = "";
-    private string _descriptionGoal = "";
-    private int _amountGoal;
-    public Goal()
-    {
+    private string _nameGoal;
+    private string _descriptionGoal;
+    private string _amountGoal;
 
+    public Goal() {}
+
+    public Goal(string nameGoal, string descriptionGoal, string amountGoal)
+    {
+        _nameGoal = nameGoal;
+        _descriptionGoal = descriptionGoal;
+        _amountGoal = amountGoal;
     }
 
     public void MenuOptions(string[] choices)
@@ -18,11 +23,12 @@ public abstract class Goal
             }
     }
 
-    // public string GetName()
-    // {
-    //     return _colorMember;
-    // }
-
-    public abstract int ShowAmount();
-
+    public string GetName()
+    {
+        return _nameGoal;
+    }
+    public string GetDescription()
+    {
+        return _descriptionGoal;
+    }
 }

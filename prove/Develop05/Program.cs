@@ -4,16 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
-
-
         Goal menuOptions = new Goal();
         List<Goal> goals = new List<Goal>();
+
         bool myBool = true;
         do
         {
-            Console.Clear();
-            Console.WriteLine("You Have 0 points\n");
+            Console.WriteLine("\nYou Have 0 points\n");
             Console.WriteLine("Menu Options:");
             string[] choices = {"1. Create new Goal", "2. List Goals", "3. Save goals", "4. Load Goals", "5. Record Events", "6. Quit"};
             menuOptions.MenuOptions(choices);
@@ -46,12 +43,12 @@ class Program
                     
                     } else if (_typeGoal == 2)
                         {
-                            EternalGoal firstGoal = new EternalGoal();
+                            // EternalGoal firstGoal = new EternalGoal();
                             // firstGoal.ShowAmount();
                             
                         } else if (_typeGoal == 3)
                             {
-                                CheckGoal firstGoal2 = new CheckGoal();
+                                // CheckGoal firstGoal2 = new CheckGoal();
                                 // firstGoal2.ShowAmount();  
 
                             } else
@@ -60,7 +57,18 @@ class Program
                                 }
                     break;
                 case 2:
-                    Console.Clear();
+                    // Console.Clear();
+                    Console.WriteLine("The goals are:");
+                    int i = 0;
+                    foreach (Goal show in goals)
+                    {
+                        string name = show.GetName();
+                        string description = show.GetDescription();
+                        i++;
+                        string a = "";
+
+                        Console.WriteLine($"{i}. [{a}] {name} ({description})");
+                    }
                     
                     break;
                 case 3:

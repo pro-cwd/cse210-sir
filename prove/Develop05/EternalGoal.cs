@@ -3,15 +3,12 @@ using System;
 public class EternalGoal : Goal
 {
     // private int _amountGoal;
-    public EternalGoal()
+    public EternalGoal(string nameGoal, string descriptionGoal, string amountGoal) : base (nameGoal, descriptionGoal, amountGoal)
     {
-        // _typeGoal = typeGoal;
+        
     }
 
-    // public override int ShowAmount()
-    // {
-    //     return _amountGoal;
-    // }
+    
 
 
 }
