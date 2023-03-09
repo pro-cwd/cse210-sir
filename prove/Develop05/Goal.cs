@@ -2,9 +2,9 @@ using System;
 
 public  class Goal
 {
-    private string _nameGoal;
-    private string _descriptionGoal;
-    private string _amountGoal;
+    public string _nameGoal;
+    public string _descriptionGoal;
+    public string _amountGoal;
 
     public Goal() {}
 

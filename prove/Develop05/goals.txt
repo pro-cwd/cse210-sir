@@ -1,0 +1,3 @@
+simple 1 - simple goal 100
+eternal goal 2 - eternal 2 30
+check 3 - che3 40

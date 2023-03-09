@@ -38,18 +38,35 @@ class Program
                         Console.Write("What is the amount of points associated with this goal? ");
                         string amount = Console.ReadLine();
 
-                        SimpleGoal createGoal = new SimpleGoal(name, description, amount);
-                        goals.Add(createGoal);
+                        SimpleGoal simpleGoal = new SimpleGoal(name, description, amount);
+                        goals.Add(simpleGoal);
                     
                     } else if (_typeGoal == 2)
                         {
-                            // EternalGoal firstGoal = new EternalGoal();
-                            // firstGoal.ShowAmount();
-                            
+                            Console.Write("What is the name of your goal? ");
+                            string name = Console.ReadLine();
+                            Console.Write("What is a short description of it? ");
+                            string description = Console.ReadLine();
+                            Console.Write("What is the amount of points associated with this goal? ");
+                            string amount = Console.ReadLine();
+
+                            EternalGoal eternalGoal = new EternalGoal(name, description, amount);
+                            goals.Add(eternalGoal);
+
                         } else if (_typeGoal == 3)
                             {
-                                // CheckGoal firstGoal2 = new CheckGoal();
-                                // firstGoal2.ShowAmount();  
+                                Console.Write("What is the name of your goal? ");
+                                string name = Console.ReadLine();
+                                Console.Write("What is a short description of it? ");
+                                string description = Console.ReadLine();
+                                Console.Write("What is the amount of points associated with this goal? ");
+                                string amount = Console.ReadLine();
+                                Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                                string bonus = Console.ReadLine();
+                                int bonusa = int.Parse(bonus);
+
+                                CheckGoal checkGoal = new CheckGoal(name, description, amount, bonusa);
+                                goals.Add(checkGoal);  
 
                             } else
                                 {
@@ -67,12 +84,20 @@ class Program
                         i++;
                         string a = "";
 
-                        Console.WriteLine($"{i}. [{a}] {name} ({description})");
+                        Console.WriteLine($"{i}. [ {a} ] {name} ({description})");
                     }
                     
                     break;
                 case 3:
-                    Console.Clear();
+                    Console.WriteLine("Whats is the filename for the goal file? ");
+                    string goalFile = Console.ReadLine();
+                    using (StreamWriter outputFile = new StreamWriter(goalFile))
+                        {
+                            foreach ( Goal entry in goals)
+                            {
+                                outputFile.WriteLine($"{entry._nameGoal} - {entry._descriptionGoal} {entry._amountGoal}");
+                            }
+                        }
                   
                     break;
                 case 4:
