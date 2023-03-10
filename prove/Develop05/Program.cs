@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Goal menuOptions = new Goal();
+        Goal readGoals = new Goal();
         List<Goal> goals = new List<Goal>();
 
         bool myBool = true;
@@ -24,7 +25,7 @@ class Program
                     Console.WriteLine("The types of Goals are:");
                     string[] choices1 = {"1. Simple Goal", "2. Eternal Goal", "3. CheckList Goal"};
                     menuOptions.MenuOptions(choices1);
-                    
+
                     Console.Write("Which type of goal would you like to crate: ");
                     string num1 = Console.ReadLine();
                     int _typeGoal = int.Parse(num1);
@@ -40,7 +41,7 @@ class Program
 
                         SimpleGoal simpleGoal = new SimpleGoal(name, description, amount);
                         goals.Add(simpleGoal);
-                    
+
                     } else if (_typeGoal == 2)
                         {
                             Console.Write("What is the name of your goal? ");
@@ -66,7 +67,7 @@ class Program
                                 int bonusa = int.Parse(bonus);
 
                                 CheckGoal checkGoal = new CheckGoal(name, description, amount, bonusa);
-                                goals.Add(checkGoal);  
+                                goals.Add(checkGoal);
 
                             } else
                                 {
@@ -86,7 +87,7 @@ class Program
 
                         Console.WriteLine($"{i}. [ {a} ] {name} ({description})");
                     }
-                    
+
                     break;
                 case 3:
                     Console.WriteLine("Whats is the filename for the goal file? ");
@@ -95,17 +96,47 @@ class Program
                         {
                             foreach ( Goal entry in goals)
                             {
-                                outputFile.WriteLine($"{entry._nameGoal} - {entry._descriptionGoal} {entry._amountGoal}");
+                                outputFile.WriteLine($"{entry.GetType()}:{entry._nameGoal},{entry._descriptionGoal},{entry._amountGoal}");
                             }
                         }
-                  
+
                     break;
                 case 4:
-                    Console.Clear();
-                
-                    
+                    Console.WriteLine("What is the filename for the goal file? ");
+                    string file = Console.ReadLine();
+                    string[] lines = System.IO.File.ReadAllLines(file);
+
+                    foreach (string line in lines)
+                    {
+                        char[] delimiterChars = {':','-',','};
+                        string[] parts = line.Split(delimiterChars);
+
+                        // readText._dateText = parts[0].Trim();
+                        readGoals._nameGoal = parts[1].Trim();
+                        readGoals._descriptionGoal = parts[2].Trim();
+                        readGoals._amountGoal = parts[3].Trim();
+                        goals.Add(readGoals);
+                    }
+                     Console.WriteLine(" ");
+
                 break;
                 case 5:
+                    Console.WriteLine("The goals are:");
+                    int x = 0;
+                    foreach (Goal show in goals)
+                    {
+                        string name = show.GetName();
+                        x++;
+                        Console.WriteLine($"{x}. {name}");
+                    }
+                    Console.Write("Which goal did you accomplish? ");
+                    string num2 = Console.ReadLine();
+                    int _goalAcomplish = int.Parse(num2);
+
+
+
+                break;
+                case 6:
                     myBool = false;
                     break;
                 default:

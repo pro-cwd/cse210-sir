@@ -1,3 +1,3 @@
-simple 1 - simple goal 100
-eternal goal 2 - eternal 2 30
-check 3 - che3 40
+SimpleGoal:simple 1,prueba 1,30
+EternalGoal:eternal,esto es una prueba,39
+CheckGoal:check,esto es una prueba,50

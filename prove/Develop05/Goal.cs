@@ -14,6 +14,7 @@ public  class Goal
         _descriptionGoal = descriptionGoal;
         _amountGoal = amountGoal;
     }
+    // public Type GetType();
 
     public void MenuOptions(string[] choices)
     {
