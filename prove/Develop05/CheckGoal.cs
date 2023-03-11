@@ -9,7 +9,7 @@ public class CheckGoal : Goal
 
     public CheckGoal(){}
 
-    public CheckGoal(string nameGoal, string descriptionGoal, int amountGoal, int bonusOne, int bonus) : base (nameGoal, descriptionGoal, amountGoal)
+    public CheckGoal(string nameGoal, string descriptionGoal, int amount, int bonusOne, int bonus) : base (nameGoal, descriptionGoal, amount)
     {
         _bonus = bonus;
         _bonusOne = bonusOne;
@@ -23,9 +23,19 @@ public class CheckGoal : Goal
     {
         return _bonusOne;
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-
+        _accomplished++;
+        if(_accomplished == _bonusOne)
+        {
+            Console.WriteLine($"Congratulations! You have earned {_amountGoal + _bonus} points!");
+            return _amountGoal + _bonus;
+        }
+        else
+        {
+            Console.WriteLine($"Congratulations! You have earned {_amountGoal} points!");
+            return _amountGoal;
+        }
     }
    public override bool IsComplete()
     {
@@ -39,9 +49,23 @@ public class CheckGoal : Goal
         }
         
     }
-    public override void AddPoints()
-    {
+    // public override void AddPoints()
+    // {
         
+    // }
+    public override string WriteFile()
+    {
+        return $"CheckGoal|{_nameGoal}|{_descriptionGoal}|{_amountGoal}|{_bonusOne}|{_bonus}|{_accomplished}";
+    }
+    public override void ReturnGoal()
+    {
+        string completed = " ";
+        if(IsComplete())
+        {
+            completed = "x";
+        }
+
+        Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal}) -- Currently completed: {_accomplished}/{_bonusOne}");
     }
    
 

@@ -26,8 +26,8 @@ class Program
             {
                 case 1:
                     Console.WriteLine("The types of Goals are:");
-                    string[] choices1 = {"1. Simple Goal", "2. Eternal Goal", "3. CheckList Goal"};
-                     foreach (string i in choices)
+                    string[] choices1 = {"1. Simple Goal", "2. Eternal Goal", "3. CheckList Goal", "4. Negative Goal (You lose points when you do it)"};
+                     foreach (string i in choices1)
                     {
                         Console.WriteLine(i);
                     }
@@ -81,6 +81,19 @@ class Program
                                 CheckGoal checkGoal = new CheckGoal(name, description, amount, bonusOne, bon);
                                 goals.Add(checkGoal);
 
+                            } else if (_typeGoal == 4)
+                            {
+                                Console.Write("What is the name of your goal? ");
+                                string n4= Console.ReadLine();
+                                Console.Write("What is a short description of it? ");
+                                string d4 = Console.ReadLine();
+                                Console.Write("What is the amount of points associated with this goal? ");
+                                int p4 = int.Parse(Console.ReadLine());
+
+                                Negative newGoal4 = new Negative(n4, d4, p4);
+
+                                goals.Add(newGoal4);
+
                             } else
                                 {
                                     Console.WriteLine("pleace select a number from 1 to 3");
@@ -102,27 +115,12 @@ class Program
                     Console.WriteLine("Whats is the filename for the goal file? ");
                     string goalFile = Console.ReadLine();
                     
-                    if(!File.Exists(goalFile))
+                    using (StreamWriter outputFile = new StreamWriter(goalFile))
                     {
-                        using (StreamWriter outputFile = new StreamWriter(goalFile))
+                        outputFile.WriteLine(points);
+                        foreach (Goal gl in goals)
                         {
-                            outputFile.WriteLine(points);
-                            foreach (Goal gl in goals)
-                            {
-                                outputFile.WriteLine(gl.WriteFile());
-                            }
-                        }
-                    }
-
-                    else 
-                    {
-                        using (StreamWriter outputFile = File.AppendText(goalFile))
-                        {
-                            outputFile.WriteLine(points);
-                            foreach (Goal gl in goals)
-                            {
-                                outputFile.WriteLine(gl.WriteFile());
-                            }
+                            outputFile.WriteLine(gl.WriteFile());
                         }
                     }
 
@@ -137,7 +135,7 @@ class Program
                         char[] delimiterChars = {'|'};
                         string[] parts = line.Split(delimiterChars);
                         
-                        string f0 = "|SimpleGoal|EternalGoal|CheckGoal|";
+                        string f0 = "SimpleGoal|EternalGoal|CheckGoal|Negative";
                         string[] f1 = f0.Split(delimiterChars); 
                         
                         //Console.WriteLine(String.Equals(f1[1], parts[1]));
@@ -162,6 +160,12 @@ class Program
                             CheckGoal newGoalC = new CheckGoal(parts[1], parts[2], newPoints, times, bonus);
                             goals.Add(newGoalC);
                         }
+                        else if(String.Equals("Negative", parts[0]))
+                        {
+                            int newPoints = int.Parse(parts[3]);
+                            Negative newGoalN = new Negative(parts[1], parts[2], newPoints);
+                            goals.Add(newGoalN);
+                        }
                         else
                         {
                             points = int.Parse(parts[0]);
@@ -171,16 +175,18 @@ class Program
                 break;
                 case 5:
                     Console.WriteLine("The goals are:");
-                    int x = 0;
-                    foreach (Goal show in goals)
+                    int x = 1;
+                    
+                    foreach (Goal gl in goals)
                     {
-                        string name = show.GetName();
+                        Console.Write($"{x}. ");
+                        gl.ReturnGoalName();
                         x++;
-                        Console.WriteLine($"{x}. {name}");
                     }
                     Console.Write("Which goal did you accomplish? ");
-                    string num2 = Console.ReadLine();
-                    int _goalAcomplish = int.Parse(num2);
+                    int input = int.Parse(Console.ReadLine());
+                    points += goals[input-1].RecordEvent();
+                    Console.WriteLine($"You now have {points} points");
 
 
 

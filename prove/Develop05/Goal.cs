@@ -5,6 +5,7 @@ public abstract class Goal
     protected string _nameGoal;
     protected string _descriptionGoal;
     protected int _amountGoal;
+    
 
     public Goal() {}
 
@@ -14,13 +15,7 @@ public abstract class Goal
         _descriptionGoal = descriptionGoal;
         _amountGoal = amountGoal;
     }
-    // public Type GetType();
-
-    // public void MenuOptions(string[] choices)
-    // {
-       
-    // }
-
+ 
     public string GetName()
     {
         return _nameGoal;
@@ -30,18 +25,13 @@ public abstract class Goal
         return _descriptionGoal;
     }
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
     public abstract bool IsComplete();
-    public abstract void AddPoints();
+    public abstract void ReturnGoal();
     
-    public void ReturnGoal()
+    public void ReturnGoalName()
     {
-        string completed = " ";
-        if(IsComplete())
-        {
-            completed = "x";
-        }
-
-        Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
+       Console.WriteLine($"{_nameGoal}");
     }
+    public abstract string WriteFile();
 }
