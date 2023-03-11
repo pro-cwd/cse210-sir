@@ -1,3 +1,1 @@
-SimpleGoal:simple 1,prueba 1,30
-EternalGoal:eternal,esto es una prueba,39
-CheckGoal:check,esto es una prueba,50
+

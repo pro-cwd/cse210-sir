@@ -1,14 +1,14 @@
 using System;
 
-public  class Goal
+public abstract class Goal
 {
-    public string _nameGoal;
-    public string _descriptionGoal;
-    public string _amountGoal;
+    protected string _nameGoal;
+    protected string _descriptionGoal;
+    protected int _amountGoal;
 
     public Goal() {}
 
-    public Goal(string nameGoal, string descriptionGoal, string amountGoal)
+    public Goal(string nameGoal, string descriptionGoal, int amountGoal)
     {
         _nameGoal = nameGoal;
         _descriptionGoal = descriptionGoal;
@@ -16,13 +16,10 @@ public  class Goal
     }
     // public Type GetType();
 
-    public void MenuOptions(string[] choices)
-    {
-        foreach (string i in choices)
-            {
-                Console.WriteLine(i);
-            }
-    }
+    // public void MenuOptions(string[] choices)
+    // {
+       
+    // }
 
     public string GetName()
     {
@@ -31,5 +28,20 @@ public  class Goal
     public string GetDescription()
     {
         return _descriptionGoal;
+    }
+
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
+    public abstract void AddPoints();
+    
+    public void ReturnGoal()
+    {
+        string completed = " ";
+        if(IsComplete())
+        {
+            completed = "x";
+        }
+
+        Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
     }
 }
