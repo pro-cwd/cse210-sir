@@ -1,4 +1,4 @@
-using system;
+using System;
 
 public abstract class Dictionary
 {
@@ -15,6 +15,6 @@ public abstract class Dictionary
         _sentence2 = sentence2;
         _answer = answer;
     }
-    
+
 
 }

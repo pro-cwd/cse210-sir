@@ -1,13 +1,14 @@
 public class MenuOption
 {
+
     public MenuOption()
     {
 
     }
 
-    public void _MenuOption(list)
+    public void _MenuOptions(string[] op)
     {
-        foreach (string i in choices)
+        foreach (string i in op)
         {
             Console.WriteLine(i);
         }

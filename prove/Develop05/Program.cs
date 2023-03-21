@@ -192,7 +192,7 @@ class Program
 
                 break;
                 case 6:
-                    myBool = false;
+                    ymBool = false;
                     break;
                 default:
                     Console.WriteLine("Pleace enter a number 1 to 5");
