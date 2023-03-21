@@ -1,5 +1,1 @@
-0
-Negative|yeald many|I yeald for everything|200
-SimpleGoal|simple goal|esto es una prueba|300|False
-EternalGoal|eternal goal|esto es un prueba|200
-CheckGoal|cehecklist goal|esto es una prueba checke|30|3|100|0
+
