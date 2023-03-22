@@ -16,5 +16,7 @@ public abstract class Dictionary
         _answer = answer;
     }
 
+    public abstract void ReturnNewWord();
+
 
 }

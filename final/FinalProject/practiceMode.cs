@@ -4,4 +4,15 @@ public class PracticeMode : Dictionary
     {
         
     }
+
+    public override void ReturnNewWord()
+    {
+        string completed = " ";
+        if(IsComplete())
+        {
+            completed = "x";
+        }
+
+        Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
+    }
 }
