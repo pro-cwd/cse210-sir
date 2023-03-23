@@ -1,0 +1,4 @@
+0
+EternalGoal|word1|sentence word1 mas que decir|Sentence 2 word1 mas que decir
+EternalGoal|word2|sentence1 word2 mas que decir|sentence2 word2 mas que decir
+EternalGoal|word 3|sentence3 word 3 mas que decir|sentence3 word 3 mas que decir

@@ -12,7 +12,7 @@ class Program
         {   
             Console.WriteLine("Welcome to the Learn new  Words in English Program\n");
             Console.WriteLine("Menu Options: ");
-            string[] menuOp = {"1. New Word", "2. List Sentences", "3. Save Words", "4. Load Words", "5. Test of words", "6. Practice", "7. Quit Words"};
+            string[] menuOp = {"1. New Word", "2. List Sentences", "3. Save Words", "4. Load Words", "5. Test of words", "6. Practice", "7. Quit"};
             options._MenuOptions(menuOp);
 
             Console.Write("\nSelect a choice from the menu: ");
@@ -23,12 +23,12 @@ class Program
                 case 1:
                     Console.Write("Pleace type the new word: ");
                     string newWord = Console.ReadLine();
-                    Console.WriteLine("Write a sentence related with the word: ");
+                    Console.Write("Write a sentence related with the word: ");
                     string sentence1 = Console.ReadLine();
-                    Console.WriteLine("Write another sentence with the word ");
+                    Console.Write("Write another sentence with the word: ");
                     string sentence2 = Console.ReadLine();
-                    Dictionary newWord = new Dictionary(newWord, sentence1, sentence2, points);
-                    newListWords.Add(newWord);
+                    PracticeMode wordS = new PracticeMode(newWord, sentence1, sentence2, points);
+                    newListWords.Add(wordS);
                 break;
                 case 2:
                     Console.Clear();
@@ -36,12 +36,23 @@ class Program
                     int count = 1;
                     foreach (Dictionary nws in newListWords)
                         {
-                            Console.Write($"{count}. ");
-                            nws.ReturnNewWord();
+                            Console.Write($"\n{count}. ");
+                            nws.GetWords();
                             count++;
                         }
                 break;
                 case 3:
+                    Console.WriteLine("Whats is the filename? ");
+                    string dictFile = Console.ReadLine();
+                    
+                    using (StreamWriter outputFile = new StreamWriter(dictFile))
+                    {
+                        outputFile.WriteLine(points);
+                        foreach (Dictionary dict in newListWords)
+                        {
+                            outputFile.WriteLine(dict.WriteFile());
+                        }
+                    }
                 break;
                 case 4:
                 break;

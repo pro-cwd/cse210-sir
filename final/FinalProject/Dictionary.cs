@@ -16,7 +16,19 @@ public abstract class Dictionary
         _answer = answer;
     }
 
-    public abstract void ReturnNewWord();
+    public abstract void GetWords();
+    // public abstract void GetWComplete();
+    // public abstract void GetRandSen();
+    // public abstract void GetRandWord();
+
+    // public int ShowGrades()
+    // {
+
+    // }
+    public string WriteFile()
+    {
+        return $"{_word}|{_sentence1}|{_sentence2}";
+    }
 
 
 }
