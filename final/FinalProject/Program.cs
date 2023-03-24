@@ -6,11 +6,11 @@ class Program
     {
         int points = 0;
         MenuOption options = new MenuOption();
-        List<Dictionary> newListWords = new List<Dictionary>();
+        List<Dictionaries> newListWords = new List<Dictionaries>();
         bool myBool = true;
         do
         {   
-            Console.WriteLine("Welcome to the Learn new  Words in English Program\n");
+            Console.WriteLine("\nWelcome to the Learn new  Words in English Program\n");
             Console.WriteLine("Menu Options: ");
             string[] menuOp = {"1. New Word", "2. List Sentences", "3. Save Words", "4. Load Words", "5. Test of words", "6. Practice", "7. Quit"};
             options._MenuOptions(menuOp);
@@ -34,7 +34,7 @@ class Program
                     Console.Clear();
                     Console.WriteLine("The words and sentences are:");
                     int count = 1;
-                    foreach (Dictionary nws in newListWords)
+                    foreach (Dictionaries nws in newListWords)
                         {
                             Console.Write($"\n{count}. ");
                             nws.GetWords();
@@ -48,15 +48,31 @@ class Program
                     using (StreamWriter outputFile = new StreamWriter(dictFile))
                     {
                         outputFile.WriteLine(points);
-                        foreach (Dictionary dict in newListWords)
+                        foreach (Dictionaries dict in newListWords)
                         {
                             outputFile.WriteLine(dict.WriteFile());
                         }
                     }
                 break;
                 case 4:
+                    Console.WriteLine("What is the filename for the words? ");
+                    string file = Console.ReadLine();
+                    string[] lines = System.IO.File.ReadAllLines(file);
+
+                    foreach (string line in lines)
+                    {
+                        char[] delimiterChars = {'|'};
+                        string[] parts = line.Split(delimiterChars);
+                        
+                        RandomSentence randSens = new RandomSentence(parts[0], parts[1], parts[2], points);
+                        newListWords.Add(randSens);
+                    }
                 break;
                 case 5:
+                    // Console.WriteLine("\nPleace, Choose a test\n");
+                    // Console.WriteLine("Menu Options: ");
+                    // string[] menuOp = {"1. Easy Test", "2. Hard Test"};
+                    // options._MenuOptions(menuOp);
                 break;
                 case 6:
                 break;

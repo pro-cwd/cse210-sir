@@ -1,6 +1,6 @@
 using System;
 
-public abstract class Dictionary
+public abstract class Dictionaries
 {
     protected string _word;
     protected string _sentence1;
@@ -8,7 +8,7 @@ public abstract class Dictionary
     protected int _answer;
     public int _grades;
 
-    public Dictionary(string word, string sentence1, string sentence2, int answer)
+    public Dictionaries(string word, string sentence1, string sentence2, int answer)
     {
         _word = word;
         _sentence1 = sentence1;
