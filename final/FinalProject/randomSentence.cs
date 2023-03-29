@@ -4,13 +4,15 @@ using System.Collections.Generic;
 
 public class RandomSentence
 {
+    private string _file;
     public List<string> _word = new List<string>();
     public List<string> _sentence = new List<string>();
+    public RandomSentence(){}
     
-    public RandomSentence()
+    public RandomSentence(string file)
     {
-        string file = "dict.txt";
-        string[] lines = System.IO.File.ReadAllLines(file);
+        _file = file;
+        string[] lines = System.IO.File.ReadAllLines(_file);
         // int count = 0;
         foreach (string line in lines)
         {
@@ -23,7 +25,6 @@ public class RandomSentence
 
     public void _RandomSent()
     {
-        bool myBool = true;
         int i = 0;
         int size = _sentence.Count();
         do
@@ -34,6 +35,7 @@ public class RandomSentence
             int stringLong = _word[randIndex].Length;
             string hiddenWord = new String('_', stringLong);
             string remplazado = _sentence[randIndex].Replace(_word[randIndex], hiddenWord);
+            
             Console.Write("- {0} ", remplazado);
             _GetNum();
             Console.WriteLine();

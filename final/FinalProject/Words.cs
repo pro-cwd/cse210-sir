@@ -1,15 +1,17 @@
 using System;
-public class RandomWords
+public class Words
 {
     private string _word;
-    public RandomWords()
+    private string _file;
+    public Words(){}
+    public Words(string file)
     {
-        string file = "dict.txt";
-        string[] lines = System.IO.File.ReadAllLines(file);
+        _file = file;
+        string[] lines = System.IO.File.ReadAllLines(_file);
         int count = 0;
         foreach (string line in lines)
         {
-            char[] delimiterChars = {'|', '.', ' '};
+            char[] delimiterChars = {'|'};
             string[] part = line.Split(delimiterChars);
             _word = part[0];
             count++;

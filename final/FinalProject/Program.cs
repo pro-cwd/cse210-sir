@@ -25,7 +25,7 @@ class Program
                     string newWord = Console.ReadLine();
                     Console.Write("Write a sentence related with the word: ");
                     string sentence = Console.ReadLine();
-                    PracticeMode wordS = new PracticeMode(newWord, sentence, points);
+                    Process wordS = new Process(newWord, sentence, points);
                     newListWords.Add(wordS);
                 break;
                 case 2:
@@ -62,7 +62,7 @@ class Program
                         char[] delimiterChars = {'|'};
                         string[] parts = line.Split(delimiterChars);
                         
-                        PracticeMode randSens = new PracticeMode(parts[0], parts[1], points);
+                        Process randSens = new Process(parts[0], parts[1], points);
                         newListWords.Add(randSens);
                     }
                 break;
@@ -77,22 +77,26 @@ class Program
                     if (testElect == 1)
                     {
                         Console.Clear();
+                        string file1 = "dict.txt";
                         Console.WriteLine("EASY TEST:\n");
-                        RandomWords word = new RandomWords();
+                        Words word = new Words(file1);
                         Console.WriteLine();
                         Console.WriteLine("\nPress enter to continue:");
                         string input = Console.ReadLine();
-                        RandomSentence sentens = new RandomSentence();
+                        RandomSentence sentens = new RandomSentence(file1);
                         sentens._RandomSent();
                     }
                     else if (testElect == 2)
                     {
+                        Console.Clear();
+                        string file2 = "dict2.txt";
                         Console.WriteLine("HARD TEST:\n");
-                        RandomWords word = new RandomWords();
+                        Words word = new Words(file2);
                         Console.WriteLine();
                         Console.WriteLine("\nPress enter to continue:");
-                        string input = Console.ReadLine();
-                        RandomSentence sentens = new RandomSentence();
+                        string input2 = Console.ReadLine();
+                        RandomSentence sentens = new RandomSentence(file2);
+                        sentens._RandomSent();
                     }
                     else
                     {
@@ -101,6 +105,13 @@ class Program
 
                 break;
                 case 6:
+                    Console.Clear();
+                    Console.WriteLine("PRACTICE YOUR ENGLISH\n");
+                    Console.WriteLine("\"Read and memorize the sentences.\"");
+                    string pFile1 = "dict.txt";
+                    string pFile2 = "dict2.txt";
+                    PracticeMode practiceFile = new PracticeMode(pFile1, pFile2);
+
                 break;
                 case 7:
                  myBool = false;
