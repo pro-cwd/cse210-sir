@@ -1,9 +1,10 @@
 using System;
-public class ShowTest : Dictionaries
+public class ShowGrades : Dictionaries
 {
-    public ShowTest(string word, string sentence1, string sentence2, int answer): base(word, sentence1, sentence2, answer)
+    private int _pointPlus;
+
+    public ShowGrades(string word, string sentence, int answer): base(word, sentence, answer)
     {
-        
     }
 
     public override void GetWords()
@@ -16,4 +17,17 @@ public class ShowTest : Dictionaries
 
         // Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
     }
+
+    // public override bool IsComplete()
+    // {
+    //     if(_accomplished == _bonusOne)
+    //     {
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         return false;
+    //     }
+        
+    // }
 }

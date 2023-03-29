@@ -1,19 +1,19 @@
 using System;
-public class RandomWords : Dictionaries
+public class RandomWords
 {
-    public RandomWords(string word, string sentence1, string sentence2, int answer): base(word, sentence1, sentence2, answer)
+    private string _word;
+    public RandomWords()
     {
-        
-    }
-
-    public override void GetWords()
-    {
-        // string completed = " ";
-        // if(IsComplete())
-        // {
-        //     completed = "x";
-        // }
-
-        // Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
+        string file = "dict.txt";
+        string[] lines = System.IO.File.ReadAllLines(file);
+        int count = 0;
+        foreach (string line in lines)
+        {
+            char[] delimiterChars = {'|', '.', ' '};
+            string[] part = line.Split(delimiterChars);
+            _word = part[0];
+            count++;
+            Console.Write($"{count}. {_word} ");
+        }
     }
 }

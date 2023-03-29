@@ -3,16 +3,14 @@ using System;
 public abstract class Dictionaries
 {
     protected string _word;
-    protected string _sentence1;
-    protected string _sentence2;
+    protected string _sentence;
     protected int _answer;
     public int _grades;
 
-    public Dictionaries(string word, string sentence1, string sentence2, int answer)
+    public Dictionaries(string word, string sentence,  int answer)
     {
         _word = word;
-        _sentence1 = sentence1;
-        _sentence2 = sentence2;
+        _sentence = sentence;
         _answer = answer;
     }
 
@@ -27,8 +25,9 @@ public abstract class Dictionaries
     // }
     public string WriteFile()
     {
-        return $"{_word}|{_sentence1}|{_sentence2}";
+        return $"{_word}|{_sentence}";
     }
+   
 
 
 }

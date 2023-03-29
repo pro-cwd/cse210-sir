@@ -1,6 +1,15 @@
-Key Wallet|I always liked key Wallets when I was a kid.|Mary lost the key wallet office.
-Polka Dot|For babies, there is an adorable polka dot romper suit.|Susan wore a polka dot in your degree.
-Braid|She's got her hair in braid today.|The dancers got they hair in braid yesterday.
-French Horn|The trumpets were next to the flutes, and the French horns behind the cellos.|French horns represent nobility, accomplishment, loneliness, and solitude.
-Funnel|The kit contains test tubes, pipettes, funnel and other lab materials necessary for multiple experiments and activities.|Funnel is usually made of stainless steel.
-Cliff|they pushed the car over the edge of the cliff.|A cliff is an area of rock which has a general angle defined by the vertical.
+enjoys|Mary enjoys cooking.
+likes|She likes bananas.
+speak|They speak English at work.
+leave|The train does not leave at 12 AM.
+money|I have no money at the moment.
+talk|Do they talk a lot?
+drink|Does she drink coffee?
+run|You run to the party.
+fantasy|I like fantasy novels.
+around|There is a white house around the corner.
+barks|My brother's dog barks a lot.
+play|Does he play tennis?
+pets|I Love my new pets
+drink|We drink milk every morning.
+twice|Mary brushes her teeth twice a day.

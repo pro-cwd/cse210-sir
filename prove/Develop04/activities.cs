@@ -56,7 +56,7 @@ public class Activities
         }
     }
 
-     public void GetNum(int num)
+    public void GetNum(int num)
     {
         for (int i = num; i > 0; i--)
         {

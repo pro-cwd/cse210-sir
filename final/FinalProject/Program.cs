@@ -24,10 +24,8 @@ class Program
                     Console.Write("Pleace type the new word: ");
                     string newWord = Console.ReadLine();
                     Console.Write("Write a sentence related with the word: ");
-                    string sentence1 = Console.ReadLine();
-                    Console.Write("Write another sentence with the word: ");
-                    string sentence2 = Console.ReadLine();
-                    PracticeMode wordS = new PracticeMode(newWord, sentence1, sentence2, points);
+                    string sentence = Console.ReadLine();
+                    PracticeMode wordS = new PracticeMode(newWord, sentence, points);
                     newListWords.Add(wordS);
                 break;
                 case 2:
@@ -47,7 +45,7 @@ class Program
                     
                     using (StreamWriter outputFile = new StreamWriter(dictFile))
                     {
-                        outputFile.WriteLine(points);
+                        outputFile.WriteLine();
                         foreach (Dictionaries dict in newListWords)
                         {
                             outputFile.WriteLine(dict.WriteFile());
@@ -64,15 +62,43 @@ class Program
                         char[] delimiterChars = {'|'};
                         string[] parts = line.Split(delimiterChars);
                         
-                        RandomSentence randSens = new RandomSentence(parts[0], parts[1], parts[2], points);
+                        PracticeMode randSens = new PracticeMode(parts[0], parts[1], points);
                         newListWords.Add(randSens);
                     }
                 break;
                 case 5:
-                    // Console.WriteLine("\nPleace, Choose a test\n");
-                    // Console.WriteLine("Menu Options: ");
-                    // string[] menuOp = {"1. Easy Test", "2. Hard Test"};
-                    // options._MenuOptions(menuOp);
+                    Console.WriteLine("\nCHOOSE A TEST\n");
+                    string[] menuOp2 = {"1. Easy Test", "2. Hard Test"};
+                    options._MenuOptions(menuOp2);
+
+                    Console.Write("\nSelect a choice from the menu: ");
+                    string num2 = Console.ReadLine();
+                    int testElect = int.Parse(num2);
+                    if (testElect == 1)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("EASY TEST:\n");
+                        RandomWords word = new RandomWords();
+                        Console.WriteLine();
+                        Console.WriteLine("\nPress enter to continue:");
+                        string input = Console.ReadLine();
+                        RandomSentence sentens = new RandomSentence();
+                        sentens._RandomSent();
+                    }
+                    else if (testElect == 2)
+                    {
+                        Console.WriteLine("HARD TEST:\n");
+                        RandomWords word = new RandomWords();
+                        Console.WriteLine();
+                        Console.WriteLine("\nPress enter to continue:");
+                        string input = Console.ReadLine();
+                        RandomSentence sentens = new RandomSentence();
+                    }
+                    else
+                    {
+                        Console.WriteLine("There is no any words storage. Pleace save a some words first");
+                    }
+
                 break;
                 case 6:
                 break;
