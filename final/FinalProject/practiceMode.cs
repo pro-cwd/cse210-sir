@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class PracticeMode 
 {
     private string _f1; 
-    private string _f2; 
+    private string _f2;
     private List<string> _word = new List<string>();
     private List<string> _sentence = new List<string>();
+    private List<Words> _text = new List<Words>();
+    private List<Words> _wwd = new List<Words>();
 
     public PracticeMode(string file1, string file2)
     {
@@ -33,17 +35,39 @@ public class PracticeMode
             _word.Add(part[0]);
             _sentence.Add(part[1]);
         }
+        foreach(string ss in _sentence)
+        {
+            Words newSentence = new Words();
+            newSentence.SetSentence(ss);
+            _text.Add(newSentence);
+        }
+        foreach(string ww in _word)
+        {
+            Words newWord = new Words();
+            newWord.SetWord(ww);
+            _wwd.Add(newWord);
+        }
     }
-    public void _HideAll()
+
+    public void _GetSentences()
+    {   
+        string text = string.Empty;
+        foreach (Words s in _text)
+        {
+            text = " " + s.GetWord(_sentence, _word);
+            Console.WriteLine("- {0} ", text);
+        }
+    }
+    public void _HideWords()
     {
-        //runs the program until the user types quit or all words have been shown hidden
         bool indicator = true;
-        
         while(indicator)
         {
             Console.Clear();
-            myScripture.GetScripture();
-            Console.WriteLine("Press enter to continue or type 'quit' to finish:");
+            Console.WriteLine("PRACTICE YOUR ENGLISH\n");
+            Console.WriteLine("\"Read and memorize the sentences.\"\n");
+            _GetSentences();
+            Console.WriteLine("\nPress enter to hide words 'quit' to finish:");
             string input = Console.ReadLine();
             if (input == "quit")
             {
@@ -62,12 +86,34 @@ public class PracticeMode
             }
         }
     }
+    //function that checks if all the words are hidden
+    public bool CompletelyHidden()
+    {
+        int counter = 0;
+        int hiddenWords = 0;
+        foreach (Words w in _text)
+        {
+            counter++;
+            if(w.GetHidden())
+            {
+                hiddenWords++;
+            }
+        }
+        if(counter == hiddenWords)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     //function that checks which words are hidden, then randomly select half of the not hidden words and hides them
     public void HideWords()
     {
         int counter = 0;
         List<int> notHidden = new List<int>();
-        foreach (Word w in _text)
+        foreach (Words w in _text)
         {
             if(!w.GetHidden())
             {
@@ -90,28 +136,5 @@ public class PracticeMode
             _text[notHidden[r]].Hide();
         }
 
-    }
-
-    //function that checks if all the words are hidden
-    public bool CompletelyHidden()
-    {
-        int counter = 0;
-        int hiddenWords = 0;
-        foreach (Word w in _text)
-        {
-            counter++;
-            if(w.GetHidden())
-            {
-                hiddenWords++;
-            }
-        }
-        if(counter == hiddenWords)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 }

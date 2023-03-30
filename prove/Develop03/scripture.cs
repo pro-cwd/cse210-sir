@@ -29,17 +29,6 @@ public class Scripture
         Console.WriteLine($"{_reference.GetBook()} {_reference.GetChapter()}:{_reference.GetVerse()}{text}");
     }
 
-    //function that hides all words
-    /*
-    public void HideWords()
-    {
-        foreach (Word w in _text)
-        {
-            w.Hide();
-        }
-    }
-    */
-
     //function that checks which words are hidden, then randomly select half of the not hidden words and hides them
     public void HideWords()
     {

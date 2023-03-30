@@ -9,25 +9,8 @@ public class ShowGrades : Dictionaries
 
     public override void GetWords()
     {
-        // string completed = " ";
-        // if(IsComplete())
-        // {
-        //     completed = "x";
-        // }
-
-        // Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
+        
     }
 
-    // public override bool IsComplete()
-    // {
-    //     if(_accomplished == _bonusOne)
-    //     {
-    //         return true;
-    //     }
-    //     else
-    //     {
-    //         return false;
-    //     }
-        
-    // }
+    
 }

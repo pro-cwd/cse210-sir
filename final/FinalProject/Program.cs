@@ -106,12 +106,11 @@ class Program
                 break;
                 case 6:
                     Console.Clear();
-                    Console.WriteLine("PRACTICE YOUR ENGLISH\n");
-                    Console.WriteLine("\"Read and memorize the sentences.\"");
+                    
                     string pFile1 = "dict.txt";
                     string pFile2 = "dict2.txt";
                     PracticeMode practiceFile = new PracticeMode(pFile1, pFile2);
-
+                    practiceFile._HideWords();
                 break;
                 case 7:
                  myBool = false;

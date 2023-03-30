@@ -17,4 +17,5 @@ public class Process : Dictionaries
         //Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
         
     }
+    
 }
