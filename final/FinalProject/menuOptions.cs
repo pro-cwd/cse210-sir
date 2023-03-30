@@ -1,10 +1,7 @@
 public class MenuOption
 {
 
-    public MenuOption()
-    {
-
-    }
+    public MenuOption(){}
 
     public void _MenuOptions(string[] op)
     {

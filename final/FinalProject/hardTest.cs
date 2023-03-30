@@ -8,12 +8,6 @@ public class HardTest : Dictionaries
 
     public override void GetWords()
     {
-        // string completed = " ";
-        // if(IsComplete())
-        // {
-        //     completed = "x";
-        // }
-
-        // Console.WriteLine($"[{completed}] {_nameGoal} ({_descriptionGoal})");
+       Console.WriteLine($"Word: {_word} | Sentence: {_sentence} |Points: {_answer}");
     }
 }

@@ -135,6 +135,5 @@ public class PracticeMode
         {
             _text[notHidden[r]].Hide();
         }
-
     }
 }

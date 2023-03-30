@@ -10,7 +10,7 @@ class Program
         bool myBool = true;
         do
         {   
-            Console.WriteLine("\nWelcome to the Learn new  Words in English Program\n");
+            Console.WriteLine("\nWelcome to the \"Learn new  Words in English Program\"\n");
             Console.WriteLine("Menu Options: ");
             string[] menuOp = {"1. New Word", "2. List Sentences", "3. Save Words", "4. Load Words", "5. Test of words", "6. Practice", "7. Quit"};
             options._MenuOptions(menuOp);
@@ -30,11 +30,11 @@ class Program
                 break;
                 case 2:
                     Console.Clear();
-                    Console.WriteLine("The words and sentences are:");
+                    Console.WriteLine("The words and sentences are:\n");
                     int count = 1;
                     foreach (Dictionaries nws in newListWords)
                         {
-                            Console.Write($"\n{count}. ");
+                            Console.Write($"{count}. ");
                             nws.GetWords();
                             count++;
                         }
@@ -102,11 +102,8 @@ class Program
                     {
                         Console.WriteLine("There is no any words storage. Pleace save a some words first");
                     }
-
                 break;
                 case 6:
-                    Console.Clear();
-                    
                     string pFile1 = "dict.txt";
                     string pFile2 = "dict2.txt";
                     PracticeMode practiceFile = new PracticeMode(pFile1, pFile2);
@@ -119,13 +116,6 @@ class Program
                     Console.WriteLine("Pleace enter a number 1 to 7");
                 break;
             }
-
-            
-
         }while (myBool);
-
-
-
-
     }
 }
