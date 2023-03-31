@@ -29,20 +29,22 @@ public class RandomSentence
         int size = _sentence.Count();
         do
         {
+            
             Random rand = new Random();
             int randIndex = rand.Next(_sentence.Count);
             // Console.WriteLine(_sentence[randIndex]);
             int stringLong = _word[randIndex].Length;
             string hiddenWord = new String('_', stringLong);
             string remplazado = _sentence[randIndex].Replace(_word[randIndex], hiddenWord);
-            
             Console.Write("- {0} ", remplazado);
             _GetNum();
             Console.WriteLine();
+            // Console.Write(" | YOUR ANSWER IS (only #): ");
+            // string ans = Console.ReadLine();
+            // answer = int.Parse(ans);
+            
             i++;
         } while (i <= size);
-        // string randd = Console.ReadLine();
-        // return randd;
     }
     public void _GetNum()
     {
