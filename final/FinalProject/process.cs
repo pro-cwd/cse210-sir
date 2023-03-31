@@ -5,8 +5,6 @@ public class Process : Dictionaries
     {
         
     }
-    
-
     public override void GetWords()
     {
         Console.WriteLine($"Word: {_word} | Sentence: {_sentence} |Points: {_answer}");

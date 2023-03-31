@@ -27,7 +27,6 @@ public class PracticeMode
         }
         
         string[] lines2 = System.IO.File.ReadAllLines(_f2);
-        // int count = 0;
         foreach (string line in lines2)
         {
             char[] delimiterChars = {'|'};
@@ -121,7 +120,6 @@ public class PracticeMode
             }
             counter++;
         }
-        
         int notHiddenWords = notHidden.Count;
         Random rnd = new Random();
         List<int> randomNumber = new List<int>();

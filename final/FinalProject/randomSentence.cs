@@ -32,7 +32,6 @@ public class RandomSentence
             
             Random rand = new Random();
             int randIndex = rand.Next(_sentence.Count);
-            // Console.WriteLine(_sentence[randIndex]);
             int stringLong = _word[randIndex].Length;
             string hiddenWord = new String('_', stringLong);
             string remplazado = _sentence[randIndex].Replace(_word[randIndex], hiddenWord);

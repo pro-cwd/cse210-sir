@@ -5,8 +5,6 @@ public class EasyTest : Dictionaries
     {
         
     }
-    
-
     public override void GetWords()
     {
         Console.WriteLine($"Word: {_word} | Sentence: {_sentence} |Points: {_answer}");

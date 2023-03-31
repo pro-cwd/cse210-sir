@@ -15,14 +15,7 @@ public abstract class Dictionaries
     }
 
     public abstract void GetWords();
-    // public abstract void GetWComplete();
-    // public abstract void GetRandSen();
-    // public abstract void GetRandWord();
-
-    // public int ShowGrades()
-    // {
-
-    // }
+    
     public string WriteFile()
     {
         return $"{_word}|{_sentence}";
